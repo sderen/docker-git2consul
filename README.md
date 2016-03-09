@@ -5,7 +5,7 @@ Docker image for [git2consul](https://github.com/Cimpress-MCP/git2consul)
 
 ## Instructions
 
-This image will run `config_seeder.js` using the first alphabetically found JSON file from `/etc/git2consul.d` if one exists.
+This image will run `config_seeder.js` using the first alphabetically JSON file found on `/etc/git2consul.d` if one exists.
 
 If using webhooks, you will have the expose the ports that are going to be used.
 
