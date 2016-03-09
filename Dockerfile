@@ -8,7 +8,4 @@ RUN apk --update add nodejs git && \
 
 COPY ./docker-entrypoint.sh /
 
-EXPOSE 8500
-
-
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
