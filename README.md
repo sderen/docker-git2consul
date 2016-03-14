@@ -1,4 +1,4 @@
-# Docker image for git2consul
+# docker-git2consul
 
 Docker image for [git2consul](https://github.com/Cimpress-MCP/git2consul)
 
