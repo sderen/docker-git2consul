@@ -3,9 +3,7 @@ MAINTAINER Calvin Leung Huang <https://github.com/cleung2010>
 
 RUN apk --update add nodejs git && \
     rm -rf /var/cache/apk/* && \
-    npm install git2consul@0.12.4 --global && \
+    npm install git2consul@0.12.6 --global && \
     mkdir -p /etc/git2consul.d
 
-COPY ./docker-entrypoint.sh /
-
-ENTRYPOINT [ "./docker-entrypoint.sh" ]
+ENTRYPOINT [ "/usr/bin/node", "/usr/lib/node_modules/git2consul" ]
