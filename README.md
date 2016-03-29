@@ -2,13 +2,6 @@
 
 Docker image for [git2consul](https://github.com/Cimpress-MCP/git2consul)
 
-
-## Instructions
-
-This image will run `config_seeder.js` using the first alphabetically JSON file found on `/etc/git2consul.d` if one exists.
-
-If using webhooks, you will have to expose the ports that are going to be used.
-
 ## Up and running
 
 ```bash
@@ -33,3 +26,7 @@ $ docker run -d --name git2consul -v /tmp/git2consul.d:/etc/git2consul.d cimpres
 ```
 
 *Note: If using docker-machine, you will need to place `config.json` in the host VM.*
+
+## Additional information
+
+If using webhooks, you will have to expose the ports that are going to be used.
