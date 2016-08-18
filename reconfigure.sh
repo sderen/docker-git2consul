@@ -1,0 +1,21 @@
+#!/bin/sh
+
+
+if [ -n "$CFG" ]
+then
+  echo "$CFG" > /etc/git2consul.d/config.json
+else
+  sed -i -e 's/GITREPO/$GIT_REPO/' -e 's/NAMESPACE/$NAMESPACE/' /etc/git2consul.d/config.json
+fi
+
+if [ -n "$ID" ]
+then
+  mkdir ~/.ssh
+  echo $ID   |base64 -d > ~/.ssh/id_rsa
+  echo $IDPUB|base64 -d > ~/.ssh/id_rsa.pub
+  echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
+  chmod 700 -R ~/.ssh
+fi
+
+exec /usr/bin/node /usr/lib/node_modules/git2consul $@
+
