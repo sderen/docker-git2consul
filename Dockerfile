@@ -6,4 +6,4 @@ RUN apk --update add nodejs git openssh && \
     npm install git2consul@0.12.10 --global && \
     mkdir -p /etc/git2consul.d
 
-ENTRYPOINT [ "/usr/bin/node", "/usr/lib/node_modules/git2consul" ]
+ENTRYPOINT [ "/bin/sh","-c","echo \"$G2C_CFG\" > /etc/git2consul.d/config.json; exec /usr/bin/node /usr/lib/node_modules/git2consul" ]
