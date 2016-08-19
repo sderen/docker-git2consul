@@ -16,6 +16,6 @@ then
   echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
   chmod 700 -R ~/.ssh
 fi
-
+echo -e "$(date) starting git2consul. found these env vars: \nCFG:$CFG \nIDPUB:$IDPUB \nCONSUL_ENDPOINT:$CONSUL_ENDPOINT \nCONSUL_PORT:$CONSUL_PORT"
 exec /usr/bin/node /usr/lib/node_modules/git2consul $@
 

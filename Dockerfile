@@ -7,7 +7,7 @@ RUN apk --update add nodejs git openssh && \
     mkdir -p /etc/git2consul.d
 
 ADD config.json /etc/git2consul.d/config.json
-ADD reconfigure.sh /reconfigure.sh
-RUN chmod 700 /reconfigure.sh
+ADD init.sh /init.sh
+RUN chmod 700 /init.sh
 
-ENTRYPOINT [ "/reconfigure.sh" ]
+ENTRYPOINT [ "/init.sh" ]
