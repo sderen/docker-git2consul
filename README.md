@@ -12,7 +12,6 @@ If you liked the project [docker-git2consul](https://github.com/Cimpress-MCP/doc
 
 
 ### Docker Examples:
-
 ```
 docker run \
         --env GIT_REPO=https://username:password@github.com/myuser/myrepo.git \
@@ -60,7 +59,6 @@ Its very useless unless you use the NAMESPACE and GIT_REPO envronment variables.
 The 6 configs you'd need to set up a consul and its git2consul feeder. lightly borrowed some of [michael](http://www.devoperandi.com/deploying-consul-in-kubernetes/ "michael's") examples. Thanks Michael!
 
 #### consul service definition
-
 ```
 apiVersion: v1
 kind: Service
@@ -89,7 +87,6 @@ spec:
 ```
 
 #### consul replicacontroller
-
 ```
 apiVersion: v1
 kind: ReplicationController
@@ -130,8 +127,7 @@ spec:
             name: server
 ```
 
-####secrets for git2consul to connect to github
-
+#### secrets for git2consul to connect to github
 ```
 apiVersion: v1
 kind: Secret
@@ -144,7 +140,6 @@ data:
 ```
 
 #### git2consul replicacontroller
-
 ```
 apiVersion: v1
 kind: ReplicationController
