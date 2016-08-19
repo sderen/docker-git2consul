@@ -1,6 +1,7 @@
 If you liked the project [docker-git2consul](https://github.com/Cimpress-MCP/docker-git2consul docker-git2consul), you'll love this. We've added suppport for more environment variables. This allows you to spin up git2consul without building a new docker images. Mearly injecting the configuration you'd like to use.
 
-###Environment variables:
+### Environment variables:
+
 *   CFG       - to replace the git2consul config.json  
 *   GIT_REPO  - to modify basic config with your git repo(basic config is listed below)  
 *   NAMESPACE - specifys the namespace your objects will come up in  
@@ -10,7 +11,8 @@ If you liked the project [docker-git2consul](https://github.com/Cimpress-MCP/doc
 *   CONSUL_PORT - configures what consul instance's port to hit  
 
 
-###Docker Examples:
+### Docker Examples:
+
 ```
 docker run \
         --env GIT_REPO=https://username:password@github.com/myuser/myrepo.git \
@@ -53,10 +55,12 @@ Basic config embedded in this image:
 ```
 Its very useless unless you use the NAMESPACE and GIT_REPO envronment variables. 
 
-###Kubernetes Examples:
+### Kubernetes Examples:
+
 The 6 configs you'd need to set up a consul and its git2consul feeder. lightly borrowed some of [michael](http://www.devoperandi.com/deploying-consul-in-kubernetes/ "michael's") examples. Thanks Michael!
 
-####consul service definition
+#### consul service definition
+
 ```
 apiVersion: v1
 kind: Service
@@ -84,7 +88,8 @@ spec:
     app: consul
 ```
 
-####consul replicacontroller
+#### consul replicacontroller
+
 ```
 apiVersion: v1
 kind: ReplicationController
@@ -126,6 +131,7 @@ spec:
 ```
 
 ####secrets for git2consul to connect to github
+
 ```
 apiVersion: v1
 kind: Secret
@@ -137,7 +143,8 @@ data:
   idrsa.pub: c3VwZXJzZWNyZXQK
 ```
 
-####git2consul replicacontroller
+#### git2consul replicacontroller
+
 ```
 apiVersion: v1
 kind: ReplicationController
