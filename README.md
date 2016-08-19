@@ -61,7 +61,7 @@ The 6 configs you'd need to set up a consul and its git2consul feeder. lightly b
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-consul
+  name: consul
   labels:
     name: consul-svc
 spec:
@@ -169,7 +169,7 @@ spec:
         - name: CFG
           value: '{"version":"1.0","repos":[{"name":"config","url":"git@github.com:myrepo/myproject.git","source_root":"dev","mountpoint":"","branches":["master"],"include_branch_name":false,"hooks":[{"type":"polling","interval":"1"}]}]}'
         - name: CONSUL_ENDPOINT
-          value: $CONSUL_SVC_SERVICE_HOST
+          value: $CONSUL_SERVICE_HOST
         - name: CONSUL_PORT
-          value: 8500
+          value: "8500"
 ```
