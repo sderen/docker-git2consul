@@ -17,5 +17,8 @@ then
   chmod 700 -R ~/.ssh
 fi
 echo -e "$(date) starting git2consul. found these env vars: \nCFG:$CFG \nIDPUB:$IDPUB \nCONSUL_ENDPOINT:$CONSUL_ENDPOINT \nCONSUL_PORT:$CONSUL_PORT"
-exec /usr/bin/node /usr/lib/node_modules/git2consul $@ --config-file /etc/git2consul.d/config.json
+while true
+do
+  /usr/bin/node /usr/lib/node_modules/git2consul $@ --config-file /etc/git2consul.d/config.json
+done
 
