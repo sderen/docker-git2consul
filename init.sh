@@ -5,7 +5,7 @@ if [ -n "$CFG" ]
 then
   echo "$CFG" > /etc/git2consul.d/config.json
 else
-  sed -i -e 's/GITREPO/$GIT_REPO/' -e 's/NAMESPACE/$NAMESPACE/' /etc/git2consul.d/config.json
+  sed -i -e "s/GITREPO/$GIT_REPO/" -e "s/NAMESPACE/$NAMESPACE/" /etc/git2consul.d/config.json
 fi
 
 if [ -n "$ID" ]
