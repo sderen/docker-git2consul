@@ -2,7 +2,7 @@
  "version": "1.0",
  "repos" : [{
    "name" : "NAMESPACE",
-   "url" : "GIT_REPO",
+   "url" : "GITREPO",
    "branches" : ["master"],
    "hooks": [{
      "type" : "polling",
