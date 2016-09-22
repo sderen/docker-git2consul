@@ -1,12 +1,21 @@
 {
- "version": "1.0",
- "repos" : [{
-   "name" : "NAMESPACE",
-   "url" : "GITREPO",
-   "branches" : ["master"],
-   "hooks": [{
-     "type" : "polling",
-     "interval" : "1"
-   }]
- }]
+    "repos": [
+        {
+            "branches": [
+                "master"
+            ],
+            "hooks": [
+                {
+                    "interval": "1",
+                    "type": "polling"
+                }
+            ],
+            "include_branch_name": false,
+            "mountpoint": "",
+            "name": "config",
+            "source_root": "NAMESPACE",
+            "url": "GITREPO"
+        }
+    ],
+    "version": "1.0"
 }
