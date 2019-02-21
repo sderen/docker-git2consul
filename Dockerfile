@@ -1,5 +1,4 @@
 FROM alpine:3.2
-MAINTAINER Calvin Leung Huang <https://github.com/cleung2010>
 
 RUN apk --update add nodejs git openssh && \
     rm -rf /var/cache/apk/* && \

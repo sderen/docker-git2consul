@@ -11,10 +11,12 @@ fi
 if [ -n "$ID" ]
 then
   mkdir ~/.ssh
-  echo $ID   |base64 -d > ~/.ssh/id_rsa
-  echo $IDPUB|base64 -d > ~/.ssh/id_rsa.pub
+  echo $ID   |base64 > ~/.ssh/id_rsa
+  echo $IDPUB|base64 > ~/.ssh/id_rsa.pub
   echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
   chmod 700 -R ~/.ssh
+else
+
 fi
 
 echo -e "$(date) starting git2consul. found these env vars: \nCFG:$CFG\nIDPUB:$IDPUB\nGIT_REPO:$GIT_REPO\nNAMESPACE:$NAMESPACE\nCONSUL_ENDPOINT:$CONSUL_ENDPOINT\nCONSUL_PORT:$CONSUL_PORT"
