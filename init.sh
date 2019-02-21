@@ -11,8 +11,8 @@ fi
 
 
 mkdir ~/.ssh
-cp /etc/ssh-key-secret/ssh-publickey ~/.ssh/id_rsa
-cp /etc/ssh-key-secret/ssh-privatekey ~/.ssh/id_rsa.pub
+cp /etc/ssh-key-secret/ssh-privatekey ~/.ssh/id_rsa
+cp /etc/ssh-key-secret/ssh-publickey ~/.ssh/id_rsa.pub
 echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
 chmod 700 -R ~/.ssh
 
