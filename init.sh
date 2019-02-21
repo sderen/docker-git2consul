@@ -11,8 +11,8 @@ fi
 if [ -n "$ID" ]
 then
   mkdir ~/.ssh
-  echo $ID   |base64 > ~/.ssh/id_rsa
-  echo $IDPUB|base64 > ~/.ssh/id_rsa.pub
+  echo $ID   > ~/.ssh/id_rsa
+  echo $IDPUB> ~/.ssh/id_rsa.pub
   echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
   chmod 700 -R ~/.ssh
 fi
