@@ -8,14 +8,13 @@ else
   sed -i -e "s@GITREPO@$GIT_REPO@" -e "s@NAMESPACE@$NAMESPACE@" /etc/git2consul.d/config.json
 fi
 
-if [ -n "$ID" ]
-then
-  mkdir ~/.ssh
-  echo $ID   > ~/.ssh/id_rsa
-  echo $IDPUB> ~/.ssh/id_rsa.pub
-  echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
-  chmod 700 -R ~/.ssh
-fi
+
+
+mkdir ~/.ssh
+cp /etc/ssh-key-secret/ssh-publickey ~/.ssh/id_rsa
+cp /etc/ssh-key-secret/ssh-privatekey ~/.ssh/id_rsa.pub
+echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
+chmod 700 -R ~/.ssh
 
 echo -e "$(date) starting git2consul. found these env vars: \nCFG:$CFG\nIDPUB:$IDPUB\nGIT_REPO:$GIT_REPO\nNAMESPACE:$NAMESPACE\nCONSUL_ENDPOINT:$CONSUL_ENDPOINT\nCONSUL_PORT:$CONSUL_PORT"
 
